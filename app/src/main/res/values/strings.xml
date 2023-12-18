@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Game Over</string>
+    <string name="User">Usuario</string>
+    <string name="Credit">Ir a Creditos</string>
+    <string name="Info">Información de la Aplicación:</string>
+    <string name="Description">Esta aplicacion esta pensada para almacenar informacion sobre juegos (quizas peliculas) que han sido completados, siendo listados
+        por fecha y pudiendo asignarle una nota para cada uno</string>
+    <string name="Contact">Contactar</string>
+</resources>
