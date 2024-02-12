@@ -1,5 +1,10 @@
 package com.marisma.gameover
 
+
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,29 +12,44 @@ import android.view.View
 import android.view.ViewGroup
 import android.content.Intent
 import android.text.Html
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import com.marisma.gameover.databinding.FragmentCreditBinding
 import com.marisma.gameover.databinding.FragmentMainBinding
 
 class CreditFragment : Fragment() {
+    val ARG_Nombres = "nombre"
+    private var nombre: String? = null
     private var _binding : FragmentCreditBinding? = null
     private val binding
         get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        /**EDITADO*/
+        setFragmentResultListener("requestKey"){ key, bundle ->
+            nombre = bundle.getString("bundleKey")
+            Log.i("Saul",  nombre.orEmpty())
+            binding.tvWelcome.text = "¡Bienvenido, " + nombre.orEmpty()
+
+
         }
+        /** */
+
+    /*arguments?.let {
+
+        }*/
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCreditBinding.inflate(inflater, container, false)
+        _binding = FragmentCreditBinding.inflate(layoutInflater, container, false)
         /*
         // Recuperar el nombre del usuario de la actividad anterior (MainActivity)
         val name = arguments?.getString("Name")
@@ -49,7 +69,7 @@ class CreditFragment : Fragment() {
             emailIntent.type = "plain/text"
             emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("tucorreo@example.com"))
             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Consulta desde la aplicación")
-            //emailIntent.putExtra(Intent.EXTRA_TEXT, "Hola, soy $name y quisiera consultar sobre...")
+            //emailIntent.putExtra(Intent.EXTRA_TEXT, "Hola, soy $nombre y quisiera consultar sobre...")
             emailIntent.putExtra(Intent.EXTRA_TEXT, "Hola, soy name y quisiera consultar sobre...")
 
             // Verificar si hay una aplicación de correo electrónico disponible
@@ -59,5 +79,16 @@ class CreditFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    companion object{
+        @JvmStatic
+        fun newInstance(param1: String) =
+            CreditFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_Nombres, param1)
+                }
+            }
+
     }
 }

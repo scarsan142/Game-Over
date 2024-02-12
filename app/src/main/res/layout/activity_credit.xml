@@ -20,7 +20,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/white"/>
+        style="@style/AppTheme"
+        android:textColor="@color/md_theme_light_onTertiary"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,6 +46,7 @@
             android:layout_marginBottom="8dp"
             android:text="@string/Info"
             android:textColor="@color/yellow"
+            style="@style/AppTheme"
             android:textSize="24dp" />
 
         <TextView
@@ -56,6 +58,7 @@
             android:text="@string/Description"
             android:textColor="@color/white"
             android:textSize="20dp"
+            style="@style/AppTheme"
             android:textAlignment="center"/>
 
     </LinearLayout>
@@ -68,7 +71,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/Contact"
-        android:textColor="@color/white"
+        android:textColor="@color/md_theme_dark_secondary"
+        style="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.marisma.gameover.databinding.FragmentLoginBinding
@@ -30,6 +31,17 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        /**EDITADO*/
+        binding.btnMenu.setOnClickListener {
+            val nombreUsu = binding.etUser.text.toString()
+            UsuarioProvider.usuario = Usuario(nombreUsu)
+            setFragmentResult("requestKey", bundleOf("bundleKey" to nombreUsu))
+            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+        }
+        return view
+        /** */
+
+        /*
         if (savedInstanceState == null) {
 
 
@@ -39,7 +51,7 @@ class LoginFragment : Fragment() {
             //Botón de Play que lleva al fragmento GameFragment.
             binding.btnMenu.setOnClickListener {
                 findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-                /*val result = "result"
+                val result = "result"
                 setFragmentResult("requestKey", bundleOf("bundleKey" to result))*/
 
             }
@@ -52,9 +64,7 @@ class LoginFragment : Fragment() {
                 }
 
             }*/
-        }
-        return view
-    }
-
-
 }
+
+
+

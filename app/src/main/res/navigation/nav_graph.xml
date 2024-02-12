@@ -25,10 +25,40 @@
         <action
             android:id="@+id/action_mainFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment" />
     </fragment>
     <fragment
         android:id="@+id/creditFragment"
         android:name="com.marisma.gameover.CreditFragment"
         android:label="fragment_credit"
         tools:layout="@layout/fragment_credit" />
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="ItemListFragment"
+        android:label="ItemListFragment" >
+        <action
+            android:id="@+id/action_itemListFragment_to_detailitemFragment"
+            app:destination="@id/detailitemFragment" />
+        <action
+            android:id="@+id/action_itemListFragment_to_userInfoFragmentFragment"
+            app:destination="@id/userInfoFragmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailitemFragment"
+        android:name="com.marisma.gameover.DetailitemFragment"
+        android:label="DetailitemFragment" />
+    <fragment
+        android:id="@+id/userInfoFragmentFragment"
+        android:name="UserInfoFragmentFragment"
+        android:label="UserInfoFragmentFragment" >
+        <action
+            android:id="@+id/action_userInfoFragmentFragment_to_favItemListFragment"
+            app:destination="@id/favItemListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favItemListFragment"
+        android:name="FavItemListFragment"
+        android:label="FavItemListFragment" />
 </navigation>

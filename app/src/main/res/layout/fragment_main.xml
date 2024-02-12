@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="16dp"
-        android:background="@color/purple">
+        android:background="@color/seed">
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,7 +22,8 @@
             android:textSize="44sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
-            android:textColor="@color/yellow"/>
+            android:textColor="@color/md_theme_dark_secondary"
+            style="@style/AppTheme"/>
 
         <ImageView
             android:layout_width="match_parent"
@@ -31,17 +32,19 @@
             android:src="@drawable/logo"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etUser"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:hint="@string/User"
             android:layout_marginBottom="16dp"
-            android:textColorHint="@android:color/darker_gray"
-            android:textColor="@color/white"/>
+            android:id="@+id/ivComenzar"
+            style="@style/AppTheme"/>
+
+        <TextView
+            android:id="@+id/tvUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textSize="30dp"
+            android:text="@string/User"
+            android:textColor="@color/md_theme_dark_onSurfaceVariant"
+            android:textColorHint="@color/md_theme_light_surfaceVariant" />
 
         <Button
             android:id="@+id/btnCredits"
@@ -51,14 +54,17 @@
             android:text="@string/Credit"
             android:onClick="goToCreditActivity"
             android:layout_gravity="bottom"
-            android:textColor="@color/white"/>
+            android:textColor="@color/md_theme_dark_tertiary"
+            style="@style/AppTheme"/>
 
         <Button
             android:id="@+id/btnExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Salir"
-            android:onClick="goToLoginFragment"/>
+            android:onClick="goToLoginFragment"
+            android:textColor="@color/md_theme_dark_tertiary"
+            style="@style/AppTheme"/>
 
 
     </LinearLayout>
