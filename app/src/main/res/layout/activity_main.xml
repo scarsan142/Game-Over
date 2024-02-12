@@ -7,53 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcwMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@color/purple">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:text="@string/app_name"
-            android:textSize="44sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/yellow"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.4"
-            android:src="@drawable/logo"
-            android:scaleType="fitCenter"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etUser"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:hint="@string/User"
-            android:layout_marginBottom="16dp"
-            android:textColorHint="@android:color/darker_gray"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:id="@+id/btnCredits"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:text="@string/Credit"
-            android:onClick="goToCreditActivity"
-            android:layout_gravity="bottom"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
